@@ -38,7 +38,6 @@ class AlienInvasion:
                     sys.exit()
                 elif event.type == pygame.KEYDOWN:
                     self._check_keydown_events(event)
-
                 elif event.type == pygame.KEYUP:
                     self._check_keyup_events(event)
                     
@@ -55,8 +54,10 @@ class AlienInvasion:
             self.ship.moving_left = False
         elif event.key == pygame.K_RIGHT:
             self.ship.moving_right = False
+        # Press 'q' to quit the game
+        elif event.key == pygame.K_q:
+            sys.exit()
         
-
     def _update_screen(self):
         """Update images on the screen, and flip to the new screen."""
         # Redraw the screen during each pass through the loop.
